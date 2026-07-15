@@ -15,9 +15,13 @@ const app = express();
 
 connectDB();
 
+// app.use(cors({
+//     origin: true,
+//     credentials: true
+// }));
 app.use(cors({
-    origin: true,
-    credentials: true
+  origin: "https://medical-c1z9wmwb1-devansh0099s-projects.vercel.app",
+  credentials: true,
 }));
 
 app.use(express.json());
