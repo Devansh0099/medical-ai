@@ -20,7 +20,7 @@ connectDB();
 //     credentials: true
 // }));
 app.use(cors({
-  origin: "https://medical-c1z9wmwb1-devansh0099s-projects.vercel.app",
+  origin: "https://medical-9a3mby5b6-devansh0099s-projects.vercel.app",
   credentials: true,
 }));
 
