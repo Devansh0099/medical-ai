@@ -1,13 +1,14 @@
-function isAuthenticated(req,res,next){
+function isAuthenticated(req, res, next) {
+    console.log("req.user =", req.user);
 
-    if(!req.user){
+    if (!req.user) {
         return res.status(401).json({
-            success:false,
-            message:"Login First"
-        })
+            success: false,
+            message: "Login First"
+        });
     }
 
-    next()
+    next();
 }
 
-module.exports = isAuthenticated
+module.exports = isAuthenticated;
