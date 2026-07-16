@@ -21,13 +21,15 @@ connectDB();
 // }));
 const allowedOrigins = [
   "http://localhost:5173",
+  "https://medical-ai-rho-three.vercel.app",
   "https://medical-ai-git-main-devansh0099s-projects.vercel.app",
   "https://medical-9a3mby5b6-devansh0099s-projects.vercel.app",
-  "https://medical-c1z9wmwb1-devansh0099s-projects.vercel.app",
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
+    console.log("Origin:", origin);
+
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
