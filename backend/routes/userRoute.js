@@ -42,6 +42,8 @@ router.post("/signin",async(req,res)=>{
     path: "/",
     maxAge: 7 * 24 * 60 * 60 * 1000,
 });
+console.log("Set-Cookie Header:");
+console.log(res.getHeader("Set-Cookie"));
         console.log(token)
         res.status(200).json({
             success: true,
