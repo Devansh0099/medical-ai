@@ -29,11 +29,21 @@ router.post("/diabetes", isAuthenticated, async (req, res) => {
         });
 
     } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: error.message,
-        });
+    console.log("========= ERROR =========");
+    console.log(error.message);
+
+    if (error.response) {
+        console.log(error.response.status);
+        console.log(error.response.data);
     }
+
+    console.log(error.stack);
+
+    res.status(500).json({
+        success: false,
+        message: error.message,
+    });
+}
 });
 
 // Heart
