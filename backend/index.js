@@ -19,8 +19,21 @@ connectDB();
 //     origin: true,
 //     credentials: true
 // }));
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://medical-ai-git-main-devansh0099s-projects.vercel.app",
+  "https://medical-9a3mby5b6-devansh0099s-projects.vercel.app",
+  "https://medical-c1z9wmwb1-devansh0099s-projects.vercel.app",
+];
+
 app.use(cors({
-  origin: "https://medical-9a3mby5b6-devansh0099s-projects.vercel.app",
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
 }));
 
